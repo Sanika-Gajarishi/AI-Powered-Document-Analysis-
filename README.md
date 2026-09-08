@@ -352,7 +352,6 @@ npm run dev
  6. Switch language to Hindi (हिंदी) or Marathi (मराठी)
 
  7. Verify you get translated answers
-```
 
 ---
 
