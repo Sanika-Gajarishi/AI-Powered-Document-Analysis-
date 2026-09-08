@@ -2,6 +2,8 @@
 
 A complete end-to-end RAG (Retrieval-Augmented Generation) system for intelligent PDF Q&A with multilingual support.
 
+---
+
 ## Features
 
 ✨ **Core Features:**
@@ -14,14 +16,9 @@ A complete end-to-end RAG (Retrieval-Augmented Generation) system for intelligen
 - 🎨 Professional UI with light/dark mode
 - 📱 Responsive design for all devices
 
-## Tech Stack
+---
 
-### Frontend
-- **React.js** (with Vite) - Modern UI framework
-- **Tailwind CSS** - Professional styling system
-- **Axios** - API integration
-- **React Router** - Client-side navigation
-- **Theme Context** - Light/Dark mode support
+## Tech Stack
 
 ### Backend
 - **Python FastAPI** - RESTful API server
@@ -31,6 +28,15 @@ A complete end-to-end RAG (Retrieval-Augmented Generation) system for intelligen
 - **pdfplumber** - PDF text extraction
 - **DeepSeek API** - Large language model
 - **Google Translate** - Multilingual translation
+
+### Frontend
+- **React.js** (with Vite) - Modern UI framework
+- **Tailwind CSS** - Professional styling system
+- **Axios** - API integration
+- **React Router** - Client-side navigation
+- **Theme Context** - Light/Dark mode support
+
+ ---
 
 ## Project Structure
 
@@ -81,44 +87,50 @@ smart-document-assistant/
 │       └── services/
 │           └── api.js          # API client
 
+---
+
 ## Setup & Installation
 
 ### Prerequisites
 - Python 3.9+
 - Node.js 16+
-- DeepSeek API key ([Get one here](https://api.deepseek.com))
+- Gemini API key ([Get one here](https://api.deepseek.com))
 
 ### Backend Setup
 
 1. Navigate to backend directory:
-```bash
+```
 cd backend
 ```
 
 2. Create virtual environment:
-```bash
+
 # Windows
+```
 python -m venv venv
 venv\Scripts\activate
+```
 
 # macOS/Linux
+```
 python3 -m venv venv
 source venv/bin/activate
+
 ```
 
 3. Install dependencies:
-```bash
+```
 pip install -r requirements.txt
 ```
 
 4. Configure environment:
-```bash
-# Edit .env file and add your DeepSeek API key
-DEEPSEEK_API_KEY=your_api_key_here
+# Edit .env file and add your Gemini API key
+```
+GEMINI_API KEY=your_api_key_here
 ```
 
 5. Run backend:
-```bash
+```
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -128,17 +140,17 @@ API docs: `http://localhost:8000/docs`
 ### Frontend Setup
 
 1. Navigate to frontend directory:
-```bash
+```
 cd frontend
 ```
 
 2. Install dependencies:
-```bash
+```
 npm install
 ```
 
 3. Start development server:
-```bash
+```
 npm run dev
 ```
 
@@ -147,7 +159,7 @@ Frontend will be available at: `http://localhost:5173`
 ## Usage
 
 1. **Start both servers** (in separate terminals):
-   ```bash
+   ```
    # Terminal 1 - Backend
    cd backend
    uvicorn main:app --reload
@@ -166,6 +178,8 @@ Frontend will be available at: `http://localhost:5173`
 5. **Change Language**: Select English (EN), Hindi (HI), or Marathi (MR)
 
 6. **Get Answers**: Receive intelligent answers powered by DeepSeek AI
+
+---
 
 ## API Endpoints
 
@@ -209,6 +223,7 @@ Ask a question about the uploaded document.
   "language": "en"
 }
 ```
+---
 
 ### POST `/api/translate`
 Translate text to another language.
@@ -230,6 +245,7 @@ Translate text to another language.
   "target_language": "hi"
 }
 ```
+---
 
 ### GET `/api/health`
 Health check endpoint.
@@ -247,6 +263,8 @@ Get session information including chat history.
 
 ### DELETE `/api/session/{session_id}`
 Delete a session.
+
+---
 
 ## How the RAG Pipeline Works
 
@@ -284,6 +302,8 @@ The application includes comprehensive error handling:
 - Efficient text chunking with overlap
 - Session-based storage (lightweight)
 
+---
+
 ## Limitations & Future Improvements
 
 ### Current Limitations
@@ -301,84 +321,21 @@ The application includes comprehensive error handling:
 - Custom embedding models
 - Response caching
 
-## Configuration
-
-### Environment Variables
-
-All configuration is in `backend/.env`:
-
-```env
-DEEPSEEK_API_KEY=your_api_key_here
-```
-
-### Backend Configuration (main.py)
-
-Modify CORS origins:
-```python
-allow_origins=["http://localhost:5173", "*"],
-```
-
-### Frontend Configuration (vite.config.js)
-
-Modify API base URL:
-```js
-proxy: {
-  '/api': {
-    target: 'http://localhost:8000',
-  }
-}
-```
-
-## Building for Production
-
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-# Run with gunicorn
-gunicorn -w 4 -b 0.0.0.0:8000 main:app
-```
-
-### Frontend
-```bash
-cd frontend
-npm run build
-# Output in frontend/dist/
-# Serve with any static host (Vercel, Netlify, etc.)
-```
-
-## Troubleshooting
-
-### "DEEPSEEK_API_KEY not found"
-- Ensure `.env` file exists in backend directory
-- Add your API key to the .env file
-- Restart the backend server
-
-### "PDF extraction failed"
-- Ensure PDF file is not corrupted
-- Try with a different PDF file
-- Check file size is under 50MB
-
-### "Connection refused"
-- Ensure backend is running on port 8000
-- Ensure frontend is running on port 5173
-- Check firewall settings
-
-### "No relevant information found"
-- Upload a document with more content
-- Ask more specific questions
-- Check if the question is related to the document
+---
 
 ## Testing the Full Flow
 
-```bash
 # 1. Start backend
+```
 cd backend
 uvicorn main:app --reload
+```
 
 # 2. Start frontend (in new terminal)
+```
 cd frontend
 npm run dev
+```
 
 # 3. Open http://localhost:5173
 
@@ -393,22 +350,22 @@ npm run dev
 
 # 7. Verify you get translated answers
 ```
+---
 
 ## Support & Documentation
 
 - **API Docs**: `http://localhost:8000/docs` (Swagger UI)
 - **ReDoc**: `http://localhost:8000/redoc`
-- **GitHub**: [Your Repository]
-
-## License
-
-MIT License - feel free to use for personal and commercial projects
-
-## Contributors
-
-- Built with ❤️ for the multilingual community
-- Powered by DeepSeek AI
+- **GitHub**: [https://github.com/Sanika-Gajarishi/AI-Powered-Document-Analysis]
 
 ---
 
-**Happy document analysis! 🚀**
+## Author
+
+Sanika Gajarishi
+
+---
+## License
+
+MIT License - feel free to use for personal and commercial projects
+---
