@@ -125,7 +125,7 @@ pip install -r requirements.txt
 ```
 
 4. Configure environment:
-# Edit .env file and add your Gemini API key
+   
 ```
 GEMINI_API KEY=your_api_key_here
 ```
@@ -141,6 +141,7 @@ API docs: `http://localhost:8000/docs`
 ### Frontend Setup
 
 1. Navigate to frontend directory:
+
 ```
 cd frontend
 ```
@@ -164,7 +165,8 @@ Frontend will be available at: `http://localhost:5173`
    # Terminal 1 - Backend
    cd backend
    uvicorn main:app --reload
-   
+   ```
+   ```
    # Terminal 2 - Frontend
    cd frontend
    npm run dev
@@ -338,19 +340,20 @@ cd frontend
 npm run dev
 ```
 
-# 3. Open http://localhost:5173
+ 3. Open http://localhost:5173
 
-# 4. Upload a PDF (use any sample PDF)
+ 4. Upload a PDF (use any sample PDF)
 
-# 5. Ask questions:
-# - "What is this document about?"
-# - "Summarize the main points"
-# - "List key findings"
+ 5. Ask questions:
+ - "What is this document about?"
+ - "Summarize the main points"
+ - "List key findings"
 
-# 6. Switch language to Hindi (हिंदी) or Marathi (मराठी)
+ 6. Switch language to Hindi (हिंदी) or Marathi (मराठी)
 
-# 7. Verify you get translated answers
+ 7. Verify you get translated answers
 ```
+
 ---
 
 ## Support & Documentation
