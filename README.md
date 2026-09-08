@@ -87,6 +87,7 @@ smart-document-assistant/
 │       └── services/
 │           └── api.js          # API client
 
+```
 ---
 
 ## Setup & Installation
